@@ -21,3 +21,33 @@ pragma solidity ^0.8.0;
 
 // simple function is can read and alter the state of contract but does not let user view the state.
 // simple:e.g => function view Example() public { Some Code }
+
+contract Visibility{
+    uint private x;
+    uint public y;
+    uint internal z;
+
+    function privateFunction() private pure returns(string memory){
+        return "private";
+    }
+
+    function internalFunction() internal pure returns(string memory){
+        return "internal";
+    }
+
+    function externalFunction() external pure returns(string memory){
+        return "external";
+    }
+
+    function publicFunction() public pure returns(string memory){
+        return "public";
+    }
+
+    function canAccessFunctions() public pure returns(string memory){
+        return privateFunction();
+    }
+
+    function canAccessVariables() public view returns(uint){
+        return x;
+    }
+}
