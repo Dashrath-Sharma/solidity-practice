@@ -25,4 +25,9 @@ contract Mapping {
             donatiee[msg.sender].donation + _donation
         );
     }
+
+    // Find details of any particular person using this smart contract.
+    function getMyDetails() public view returns (donner memory) {
+        return donatiee[msg.sender];
+    }
 }
