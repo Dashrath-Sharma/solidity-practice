@@ -14,32 +14,28 @@ contract A {
     uint256 public a = 5;
 }
 
-contract B is A {
-    uint256 public b = 10;
-}
+contract B is A {}
 
-contract C is A {
-    uint256 public c = 15;
-}
+contract C is A {}
 
 contract X {
-    uint256 public x = 25;
+    uint256 public x = 55;
 }
 
-contract Y is X {
-    uint256 public y = 25;
-}
+contract Y is X {}
 
-contract D is X, A, Y, B, C {
-    uint256 public d = 20;
-}
+contract D is X, A, Y, B, C {}
 
 contract E is A, Y, B, C, D {}
 
-contract F {}
+contract F {
+    uint256 public f = 30;
+}
 
-contract G {}
+contract G {
+    uint256 public g = 35;
+}
 
-contract H is G,F{}
+contract H is G, F {}
 
-contract I is H,E {} 
+contract I is H, E {}
